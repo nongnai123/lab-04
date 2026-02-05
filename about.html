@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - WORAPAN SINBAVORNROJ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">WS.</div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="deploy-github.html">Deploy</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle">☀️</button>
+        </div>
+    </nav>
+
+    <section class="container about-section" style="margin-top: 80px;">
+        <div class="about-img">
+            <img src="assets/images.png" alt="Worapan Sinbavornroj">
+        </div>
+        <div class="about-text">
+            <h1>About Me</h1>
+            <p>Hello! I'm Worapan Sinbavornroj (ID: 8650200358), a passionate web developer based in Bangkok. With a strong foundation in HTML, CSS, and modern web technologies, I strive to create visually appealing and functional websites.</p>
+            <p>I enjoy solving complex problems and turning ideas into reality through code. When I'm not coding, you can find me exploring the latest design trends or learning new technologies.</p>
+            
+            <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--text-color);">Skills</h3>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 1rem;">
+                <div style="background: var(--glass-bg); padding: 0.5rem; text-align: center; border-radius: 8px;">HTML5</div>
+                <div style="background: var(--glass-bg); padding: 0.5rem; text-align: center; border-radius: 8px;">CSS3</div>
+                <div style="background: var(--glass-bg); padding: 0.5rem; text-align: center; border-radius: 8px;">JavaScript</div>
+                <div style="background: var(--glass-bg); padding: 0.5rem; text-align: center; border-radius: 8px;">UI Design</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2569 WORAPAN SINBAVORNROJ. All rights reserved.</p>
+        <p>ID: 8650200358 | Email: worapan.sinb@bu.ac.th</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.5;">Submission Date: Thursday, February 5, 2026</p>
+    </footer>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+        if (localStorage.getItem('theme') === 'light') { body.classList.add('light-mode'); toggleBtn.textContent = '🌙'; } else { toggleBtn.textContent = '☀️'; }
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('light-mode')) { toggleBtn.textContent = '🌙'; localStorage.setItem('theme', 'light'); } 
+            else { toggleBtn.textContent = '☀️'; localStorage.setItem('theme', 'dark'); }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deploy to GitHub Pages - WORAPAN SINBAVORNROJ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">WS.</div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="deploy-github.html" class="active">Deploy</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle">☀️</button>
+        </div>
+    </nav>
+
+    <div class="guide-content">
+        <div class="guide-nav">
+             <a href="deploy-github.html" class="btn">GitHub Pages</a>
+             <a href="deploy-cloudflare.html" class="btn" style="background: transparent; border: 1px solid var(--accent-color); color: var(--text-color);">Cloudflare Pages</a>
+        </div>
+
+        <h1>Deploy to GitHub Pages</h1>
+        <p>A step-by-step guide to hosting your static website for free using GitHub Pages.</p>
+
+        <div class="guide-step">
+            <h3>Step 1: Push Your Code</h3>
+            <p>Ensure your project is initialized as a Git repository and pushed to GitHub.</p>
+            <div class="code-block">
+                git init <br>
+                git add . <br>
+                git commit -m "Initial commit" <br>
+                git remote add origin https://github.com/username/repository.git <br>
+                git push -u origin main
+            </div>
+        </div>
+
+        <div class="guide-step">
+            <h3>Step 2: Configure Pages Settings</h3>
+            <p>Go to your repository on GitHub, navigate to <strong>Settings</strong> > <strong>Pages</strong>.</p>
+            <p>Under "Build and deployment", select <strong>Deploy from a branch</strong>.</p>
+            <img src="assets/github_deploy_ui.png" alt="GitHub Pages Settings UI">
+        </div>
+
+        <div class="guide-step">
+            <h3>Step 3: Select Source</h3>
+            <p>Choose the <strong>main</strong> branch and ensure the folder is set to <strong>/ (root)</strong>. Click <strong>Save</strong>.</p>
+        </div>
+
+        <div class="guide-step">
+            <h3>Step 4: Live!</h3>
+            <p>Wait a few minutes. Your site will be published at:</p>
+            <div class="code-block">https://username.github.io/repository-name</div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2569 WORAPAN SINBAVORNROJ. All rights reserved.</p>
+        <p>ID: 8650200358 | Email: worapan.sinb@bu.ac.th</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.5;">Submission Date: Thursday, February 5, 2026</p>
+    </footer>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+        if (localStorage.getItem('theme') === 'light') { body.classList.add('light-mode'); toggleBtn.textContent = '🌙'; } else { toggleBtn.textContent = '☀️'; }
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('light-mode')) { toggleBtn.textContent = '🌙'; localStorage.setItem('theme', 'light'); } 
+            else { toggleBtn.textContent = '☀️'; localStorage.setItem('theme', 'dark'); }
+        });
+    </script>
+
+</body>
+</html>

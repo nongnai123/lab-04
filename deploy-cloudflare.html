@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deploy to Cloudflare Pages - WORAPAN SINBAVORNROJ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">WS.</div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="deploy-cloudflare.html" class="active">Deploy</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle">☀️</button>
+        </div>
+    </nav>
+
+    <div class="guide-content">
+        <div class="guide-nav">
+             <a href="deploy-github.html" class="btn" style="background: transparent; border: 1px solid var(--accent-color); color: var(--text-color);">GitHub Pages</a>
+             <a href="deploy-cloudflare.html" class="btn">Cloudflare Pages</a>
+        </div>
+
+        <h1>Deploy to Cloudflare Pages</h1>
+        <p>Deploy your site globally with Cloudflare's fast and secure network.</p>
+
+        <div class="guide-step">
+            <h3>Step 1: Create Application</h3>
+            <p>Log in to the Cloudflare Dashboard. Click <strong>+ Add</strong> and select <strong>Pages</strong>.</p>
+            <p>Then select <strong>Connect to Git</strong>.</p>
+            <img src="assets/cloudflare_add_pages_mockup.png" alt="Cloudflare Pages Dashboard - Add Pages">
+        </div>
+
+        <div class="guide-step">
+            <h3>Step 2: Select Repository</h3>
+            <p>Authorize Cloudflare to access your GitHub account and select your repository (e.g., <code>it464a-gitsample</code>).</p>
+        </div>
+
+        <div class="guide-step">
+            <h3>Step 3: Configure Builds</h3>
+            <p>Set the <strong>Project Name</strong> (this will be your subdomain). For <strong>Framework preset</strong>, leave it as "None" for a static HTML site.</p>
+        </div>
+
+        <div class="guide-step">
+            <h3>Step 4: Deploy</h3>
+            <p>Click <strong>Save and Deploy</strong>. Cloudflare will build and deploy your site in seconds.</p>
+             <div class="code-block">https://your-project.pages.dev</div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2569 WORAPAN SINBAVORNROJ. All rights reserved.</p>
+        <p>ID: 8650200358 | Email: worapan.sinb@bu.ac.th</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.5;">Submission Date: Thursday, February 5, 2026</p>
+    </footer>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+        if (localStorage.getItem('theme') === 'light') { body.classList.add('light-mode'); toggleBtn.textContent = '🌙'; } else { toggleBtn.textContent = '☀️'; }
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('light-mode')) { toggleBtn.textContent = '🌙'; localStorage.setItem('theme', 'light'); } 
+            else { toggleBtn.textContent = '☀️'; localStorage.setItem('theme', 'dark'); }
+        });
+    </script>
+
+</body>
+</html>
